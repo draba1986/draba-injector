@@ -1,0 +1,19 @@
+{
+  "name": "draba-injector",
+  "version": "0.0.1",
+  "description": "Dependency injector for application or unit test.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "author": "draba1986",
+  "license": "Apache License Version 2.0",
+  "dependencies": {
+    "debug": "2.2.0",
+    "dependency-graph": "0.4.1",
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "chai": "3.5.0"
+  }
+}
