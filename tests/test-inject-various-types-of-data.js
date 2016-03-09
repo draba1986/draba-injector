@@ -27,6 +27,7 @@ describe('test-inject-various-types-of-data', function () {
     it('It should be ok when injected a function', function () {
         var injector = new Injector(__dirname);
         var data = injector.inject(['example.types.function', _.identity]);
-        expect(data).to.be.a('string').and.equal('The function');
+        expect(data).to.be.a('function');
+        expect(data()).to.equal('The function');
     });
 });

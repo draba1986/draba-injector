@@ -1,11 +1,15 @@
 # draba-injector #
 
+dependent injection module, used to help isolating components which will become more easily test
 依赖注入模块，用来分离应用程序中的组件，或用来测试。
 
+"require" is the default module in Node.js, but more dependencies, and hard to test
 require是nodejs默认的模块加载组件，耦合性非常强，非常不利于单元测试。
 
+follow is a example, more code in the "tests" directory
 下面介绍一个简单的例子来展示此模块的用法（具体代码见tests目录）
 
+directory
 目录结构
 
     /example
@@ -15,10 +19,11 @@ require是nodejs默认的模块加载组件，耦合性非常强，非常不利�
             entityC.js
             entityD.js
 
+dependency:
 依赖关系：
 
-    entityA依赖entityB
-    entityB依赖entityC和entityD
+    "entityA" dependents to "entityB"
+    "entityB" dependents to "entityC" and "entityD"
 
 entityA.js的内容
 
@@ -42,6 +47,7 @@ entityD.js的内容
         return 8;
     }];
 
+how to use
 如何加载使用
 
     var Inject = require('draba-injector');
@@ -50,22 +56,25 @@ entityD.js的内容
         return {entityA:entityA};
     }]);
 
-## 规则 ##
+## rule规则 ##
 
-### 目标： ###
+### target目标： ###
 
 格式如下：
 
     [entityName1, entityName2,..., function (entity1, entity2,...) {
     }]
 
-### 实体： ###
+### entity实体： ###
 
+same to component
 等同于组件
 
 格式如下：
 
+    format is RegExp('^[0-9a-z_$\-]+([.][0-9a-z_$\-]+)*(:[0-9a-z_$\-]+)*$', 'i')
     实体名称格式为 RegExp('^[0-9a-z_$\-]+([.][0-9a-z_$\-]+)*(:[0-9a-z_$\-]+)*$', 'i')
+    entity name will be parsed to a path by replace "." to "/"
     实体名称会被解析成路径，每一个"."被替解析成“/”，加上basePath前缀做路径得到实体的文件路径
 
 ## Api ##
@@ -80,5 +89,5 @@ params:
 
 params:
 
-    @target <array> the main component which will be injected
+    @target <array|other> the main component which will be injected;if not an array, directly return
     @injectionData <undefined|object> the predefined data that will be injected to the target

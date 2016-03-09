@@ -42,8 +42,6 @@ var decodeTarget = Injector.decodeTarget = function (target) {
                 .value();
             entityObject.functionInjected = last;
         }
-    } else if (_.isFunction(target)) {
-        entityObject.functionInjected = target;
     }
     return entityObject;
 };

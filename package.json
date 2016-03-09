@@ -1,12 +1,21 @@
 {
   "name": "draba-injector",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "keywords":"dependency, inject, injector, unit, test",
   "description": "Dependency injector for application or unit test.",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests"
   },
   "author": "draba1986",
+  "respository" : {
+    "type" :"git",
+    "url" :"https://github.com/draba1986/draba-injector.git"
+  },
+  "bugs" : {
+    "url" : "https://github.com/draba1986/draba-injector/issues",
+    "email" : "draba1986@gmail.com"
+  },
   "license": "Apache License Version 2.0",
   "dependencies": {
     "debug": "2.2.0",

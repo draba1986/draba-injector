@@ -30,6 +30,6 @@ describe('test-decode-target', function () {
         var target = function () {};
         var entityObject = Injector.decodeTarget(target);
         expect(entityObject.dependencies).to.has.length(0);
-        expect(entityObject.functionInjected).to.equal(target);
+        expect(entityObject.functionInjected()).to.equal(target);
     });
 });
