@@ -1,6 +1,6 @@
 {
   "name": "draba-injector",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "keywords":"dependency, inject, injector, unit, test",
   "description": "Dependency injector for application or unit test.",
   "main": "index.js",
@@ -18,7 +18,6 @@
   },
   "license": "Apache License Version 2.0",
   "dependencies": {
-    "debug": "2.2.0",
     "dependency-graph": "0.4.1",
     "underscore": "1.8.3"
   },

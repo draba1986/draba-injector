@@ -83,7 +83,7 @@ same to component
 
 params:
 
-    @basePath <string> the basePath of the Injector
+    @basePath <string|array> the basePath of the Injector, Injector will search entities in the basePath by order
 
 ### Injector.prototype.inject ###
 
