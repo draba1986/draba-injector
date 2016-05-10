@@ -4,11 +4,16 @@ var expect = require('chai').expect;
 var Injector = require('../');
 
 describe('test-base-path', function () {
-    it('It should be the same with _basePath and basePath which passed by parameter', function () {
-        expect(Injector.prototype._basePath).to.equal('./');
+    it('It should be the ok when passed a string basePath', function () {
+        expect(Injector.prototype._basePath).deep.equal([]);
         var basePath = __dirname;
         var injector = new Injector(basePath);
-        expect(injector._basePath).to.equal(basePath);
+        expect(injector._basePath).deep.equal([basePath]);
+    });
+    it('It should be the ok when passed a array basePath', function () {
+        var basePath = [__dirname, __dirname+'/example'];
+        var injector = new Injector(basePath);
+        expect(injector._basePath).deep.equal(basePath);
     });
     it('It should be ok when inject a single file witch exists without any dependency', function () {
         var injector = new Injector(__dirname);
